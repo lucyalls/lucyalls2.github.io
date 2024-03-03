@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widget de Frases</title>
+  <style>
+    /* Estilos opcionales para el widget */
+    #phrase-widget {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="phrase-widget"></div>
+
+  <script>
+    // Define un array de frases
+    const phrases = [
+      "Frase 1",
+      "Frase 2",
+      "Frase 3",
+      // Agrega más frases según sea necesario
+    ];
+
+    // Función para obtener una frase aleatoria del array
+    function getRandomPhrase() {
+      return phrases[Math.floor(Math.random() * phrases.length)];
+    }
+
+    // Función para mostrar una nueva frase en el widget
+    function displayRandomPhrase() {
+      const phraseWidget = document.getElementById("phrase-widget");
+      phraseWidget.textContent = getRandomPhrase();
+    }
+
+    // Mostrar una frase al cargar la página
+    displayRandomPhrase();
+
+    // Opcional: Mostrar una nueva frase cada vez que se carga la página
+    window.onload = function() {
+      displayRandomPhrase();
+    };
+  </script>
+</body>
+</html>
